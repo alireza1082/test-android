@@ -1,16 +1,30 @@
-<LinearLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@drawable/ice"
->
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="benvis"
-    android:layout_gravity="center"
-    android:textAlignment="center"
-    android:textColor="@color/colorPrimaryDark"
-    android:maxLines="1"
-    android:scrollIndicators="right"    />
+    android:background="@drawable/ice">
 
-    </LinearLayout>
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:text="benvis"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/button"
+        android:text="Button"
+        android:layout_below="@id/editText"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorPrimary"
+        android:textColorLink="@color/colorAccent"
+        android:background="@color/colorBlack"
+        />
+
+</RelativeLayout>
