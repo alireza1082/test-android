@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
     @Override
@@ -28,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean itemClick(MenuItem item){
         Toast.makeText(this , item.getTitle() , Toast.LENGTH_LONG).show();
+        return true;
+    }
+
+    public boolean newPage(MenuItem item){
+        Intent intent = new Intent(MainActivity.this , SettingsActivity.class);
+        startActivity(intent);
         return true;
     }
 

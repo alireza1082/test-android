@@ -4,5 +4,6 @@
         android:title="item"
         android:onClick="itemClick"/>
     <item android:title="page"
-        android:id="@+id/new-page"/>
+        android:id="@+id/new-page"
+        android:onClick="newPage"/>
 </menu>
