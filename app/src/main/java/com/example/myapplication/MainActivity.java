@@ -2,8 +2,11 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,9 +19,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    class thread extends Thread{
-        @Override
-        public void run() {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main , menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean itemClick(MenuItem item){
+        Toast.makeText(this , item.getTitle() , Toast.LENGTH_LONG).show();
+        return true;
+    }
+
+    public void run() {
             while (true) {
                 car.drive();
                 TextView txv1 = findViewById(R.id.distance_txv);
@@ -27,13 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 txv2.setText("Gas : " + car.getGas());
             }
         }
-    }
 
-    thread t = new thread();
 
-    public void start(View view) throws InterruptedException {
-            t.start();
-            thread.sleep(200);
+    public void start(View view) {
+
     }
 
     public void break1(View view){
