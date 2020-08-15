@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button button = findViewById(R.id.drive1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText editText = findViewById(R.id.km);
+                int number = Integer.parseInt(editText.getText().toString());
+                car.drive(number);
+                TextView txv2 = findViewById(R.id.gas_txv);
+                TextView txv1 = findViewById(R.id.distance_txv);
+                txv1.setText("Distance : "+car.getDistance());
+                txv2.setText("Gas : " + car.getGas());
+            }
+        });
 
     }
 
@@ -34,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean newPage(MenuItem item){
         Intent intent = new Intent(MainActivity.this , SettingsActivity.class);
+        intent.putExtra("name" , "ali");
         startActivity(intent);
         return true;
     }

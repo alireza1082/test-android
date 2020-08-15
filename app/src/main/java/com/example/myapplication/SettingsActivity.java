@@ -21,14 +21,22 @@ public class SettingsActivity extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.naziinbaroon);
-        mediaPlayer.start();
+  //      final MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.naziinbaroon);
+  //      mediaPlayer.start();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         Button button = (Button)findViewById(R.id.button);
+        bundle extras = getIntent().getExtras();
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+            }
+        });
+
+        button.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return false;
             }
         });
 

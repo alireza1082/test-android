@@ -85,8 +85,8 @@ public class Car {
     public void decreamentGas(){
         this.gas -= this.speed * 0.1;
     }
-    public void decreamentGas(int km){
-        this.gas -= km / 50;
+    public void decreamentGas(double km){
+        this.gas -= km ;
     }
 
     public void setTopSpeed(int topSpeed) {
@@ -105,11 +105,11 @@ public class Car {
         }
     }
     public void drive(int km){
-        int gas2 = km/10;
+        double gas2 =  (km/10.0);
         if (this.gas > gas2) {
-            this.decreamentGas(km);
+            this.decreamentGas(gas2);
             this.increamentDistance(km);
-            System.out.println("Drive for " + km + " K.M");
+            System.out.println("Drive for " + km + " K.M" + "with" + gas2 + "speed");
         }
     }
 

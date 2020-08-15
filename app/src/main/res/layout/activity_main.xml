@@ -79,5 +79,18 @@
             android:id="@+id/break1"
             android:onClick="break1"
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="drive1"
+            android:id="@+id/drive1"
+           />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/km"
+            android:maxLength="2"
+            android:numeric="integer"/>
     </LinearLayout>
 </LinearLayout>
