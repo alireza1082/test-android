@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -27,6 +28,10 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.settings_activity);
         Button button = (Button)findViewById(R.id.button);
         Bundle extras = getIntent().getExtras();
+        String name = "";
+        name = extras.getString("name");
+        EditText editText = findViewById(R.id.editText);
+        editText.setText(name);
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
