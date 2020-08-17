@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,18 +45,15 @@ public class SettingsActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 return false;
             }
         });
-
     }
     @Override
-    public boolean onCreateOptionsMenu(final Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu){
         final MenuItem menuItem = menu.add("cancel");
 //        final MenuItem pow = menu.add("click");
         menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
@@ -68,11 +66,23 @@ public class SettingsActivity extends AppCompatActivity {
                 return false;
             }
         });
-        MenuItem pow1 = menu.add("click1").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        menu.add("click1").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("sms:09121231232"));
+                intent.putExtra("sms_body" , "hello boy!");
+                startActivity(intent);
+                return false;
+            }
+        });
+        SubMenu subMenu = menu.addSubMenu("subMenu");
+        subMenu.add("dialer").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("tel:09226145636"));
+                //call me:)
                 startActivity(intent);
                 return false;
             }
