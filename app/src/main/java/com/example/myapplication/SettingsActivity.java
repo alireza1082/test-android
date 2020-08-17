@@ -26,7 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         Button button = (Button)findViewById(R.id.button);
-        bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras();
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
