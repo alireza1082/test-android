@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int REQ = 20;
 
     Car car = new Car(200 , 50 , "red");
 
@@ -37,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQ && resultCode == RESULT_OK){
+            Toast.makeText(this , "its OK." , Toast.LENGTH_SHORT).show();
+        }
+        if (requestCode == REQ && resultCode == RESULT_CANCELED)
+            Toast.makeText(this , "Not OK!" , Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main , menu);
         return super.onCreateOptionsMenu(menu);
@@ -50,9 +61,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean newPage(MenuItem item){
         Intent intent = new Intent(MainActivity.this , SettingsActivity.class);
         intent.putExtra("name" , "ali");
-        startActivity(intent);
+        startActivityForResult(intent , REQ);
         return true;
     }
+
 
     public void run() {
             while (true) {
