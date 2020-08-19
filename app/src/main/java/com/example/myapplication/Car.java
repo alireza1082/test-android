@@ -109,7 +109,7 @@ public class Car {
         if (this.gas > gas2) {
             this.decreamentGas(gas2);
             this.increamentDistance(km);
-            System.out.println("Drive for " + km + " K.M" + "with" + gas2 + "speed");
+            System.out.println("Drive for " + km + " K.M  " + "with" + gas2 + "speed");
         }
     }
 

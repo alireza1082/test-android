@@ -26,8 +26,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 EditText editText = findViewById(R.id.km);
-                int number = Integer.parseInt(editText.getText().toString());
-                car.drive(number);
+                try {
+                    car.drive(Integer.parseInt(editText.getText().toString()));
+                } catch (Exception e){
+                    Toast.makeText( MainActivity.this , "field is empty" , Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
+                }
                 TextView txv2 = findViewById(R.id.gas_txv);
                 TextView txv1 = findViewById(R.id.distance_txv);
                 txv1.setText("Distance : "+car.getDistance());

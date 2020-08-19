@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -21,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
 
 import java.net.URI;
+import java.util.Random;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -35,7 +37,9 @@ public class SettingsActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String name = extras.getString("name");
         EditText editText = findViewById(R.id.editText);
-        TextView textView = findViewById(R.id.textView);
+        Button button1 = new Button(this);
+        button1.setText("click");
+        final TextView textView = findViewById(R.id.textView);
         textView.setText(name);
         //editText.setText(name);
         button.setOnClickListener(new View.OnClickListener(){
@@ -48,6 +52,8 @@ public class SettingsActivity extends AppCompatActivity {
         button.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                Random random = new Random();
+                textView.setTextColor(Color.rgb(random.nextInt(255) , random.nextInt(255) , random.nextInt(255)));
                 return false;
             }
         });
@@ -89,5 +95,4 @@ public class SettingsActivity extends AppCompatActivity {
         });
         return super.onCreateOptionsMenu(menu);
     }
-
 }
