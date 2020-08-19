@@ -13,6 +13,7 @@ import android.view.SubMenu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,8 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
   //      final MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.naziinbaroon);
   //      mediaPlayer.start();
+        ImageView metro = findViewById(R.id.metro);
+        ImageView nes = findViewById(R.id.nes);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         Button button = (Button)findViewById(R.id.button);
@@ -57,6 +60,7 @@ public class SettingsActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
