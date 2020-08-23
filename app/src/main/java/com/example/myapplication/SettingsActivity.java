@@ -97,6 +97,13 @@ public class SettingsActivity extends AppCompatActivity {
                 return false;
             }
         });
+        subMenu.add("animation").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(SettingsActivity.this , animationActivity.class));
+                return false;
+            }
+        });
         return super.onCreateOptionsMenu(menu);
     }
 }
