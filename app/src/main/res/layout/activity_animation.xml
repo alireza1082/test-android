@@ -6,4 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".animationActivity">
 
+    <ImageView
+        android:id="@+id/browse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/browsing"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        tools:ignore="MissingConstraints"
+        android:alpha="1"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="32dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
