@@ -12,6 +12,9 @@ import android.widget.MediaController;
 import android.widget.SeekBar;
 import android.widget.VideoView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class musicActivity extends AppCompatActivity {
 
     Button start;
@@ -71,5 +74,30 @@ public class musicActivity extends AppCompatActivity {
         volume_seek.setMax(audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC));
         volume_seek.setProgress(audioManager.getStreamVolume(AudioManager.STREAM_MUSIC));
 
+        track_seek.setMax(player.getDuration());
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                track_seek.setProgress(player.getCurrentPosition());
+            }
+        } , 0 , 100);
+        track_seek.setProgress(0);
+        track_seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser)
+                    player.seekTo(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 }
