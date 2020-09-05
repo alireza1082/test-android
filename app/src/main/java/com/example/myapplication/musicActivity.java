@@ -12,6 +12,7 @@ public class musicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
         VideoView videoView = findViewById(R.id.video);
-//        videoView.setVideoPath("android.resource://" + getPackageName() + "/" + );
+        videoView.setVideoPath("android.resource://" + getPackageName() + "/" + R.raw.ali);
+        videoView.start();
     }
 }
