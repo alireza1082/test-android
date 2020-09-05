@@ -16,7 +16,7 @@ public class animationActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-         imageView = findViewById(R.id.browse);
+        imageView = findViewById(R.id.browse);
         imageView.setOnClickListener(this);
     }
 
