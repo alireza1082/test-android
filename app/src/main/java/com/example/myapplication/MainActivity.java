@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         menu.add("music").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                startActivity(new Intent(MainActivity.this , animationActivity.class));
+                startActivity(new Intent(MainActivity.this , musicActivity.class));
                 return false;
             }
         });
