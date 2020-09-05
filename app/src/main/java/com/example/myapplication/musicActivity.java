@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.VideoView;
 
 public class musicActivity extends AppCompatActivity {
 
@@ -10,5 +11,7 @@ public class musicActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
+        VideoView videoView = findViewById(R.id.video);
+//        videoView.setVideoPath("android.resource://" + getPackageName() + "/" + );
     }
 }
