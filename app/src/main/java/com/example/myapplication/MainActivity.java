@@ -2,8 +2,11 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
     public static final int REQ = 20;
@@ -86,20 +92,35 @@ public class MainActivity extends AppCompatActivity {
                 TextView txv2 = findViewById(R.id.gas_txv);
                 txv2.setText("Gas : " + car.getGas());
             }
-        }
+    }
 
 
+    Timer timer = new Timer();
     public void start(View view) {
-
+        try {
+        timer.schedule(new TimerTask() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void run() {
+                car.drive();
+                TextView txv1 = findViewById(R.id.distance_txv);
+                txv1.setText("Distance : "+ car.getDistance());
+                TextView txv2 = findViewById(R.id.gas_txv);
+                txv2.setText("Gas : " + car.getGas());
+            }
+        } , 0 , 1000);}catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void break1(View view){
+        timer.cancel();
     }
 
     public void drive(View view){
         car.drive();
         TextView txv1 = findViewById(R.id.distance_txv);
-        txv1.setText("Distance : "+car.getDistance());
+        txv1.setText("Distance : "+ car.getDistance());
         TextView txv2 = findViewById(R.id.gas_txv);
         txv2.setText("Gas : " + car.getGas());
 
