@@ -105,15 +105,15 @@ public class MainActivity extends AppCompatActivity {
     Timer timer = new Timer();
     public void start(View view) {
         try {
-        timer.schedule(new TimerTask() {
+        timer.scheduleAtFixedRate(new TimerTask() {
             @SuppressLint("SetTextI18n")
             @Override
             public void run() {
                 car.drive();
                 TextView txv1 = findViewById(R.id.distance_txv);
-                txv1.setText("Distance : "+ car.getDistance());
+//                txv1.setText("Distance : "+ car.getDistance());
                 TextView txv2 = findViewById(R.id.gas_txv);
-                txv2.setText("Gas : " + car.getGas());
+//                txv2.setText("Gas : " + car.getGas());
             }
         } , 0 , 1000);}catch (Exception e){
             e.printStackTrace();

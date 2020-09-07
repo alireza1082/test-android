@@ -9,10 +9,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/accessibility_action_clickable_span"
         android:text="click"
         android:layout_centerHorizontal="true"
         android:onClick="progress"
         android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click2"
+        android:layout_below="@id/accessibility_action_clickable_span"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="builder"
         />
 
 </RelativeLayout>
