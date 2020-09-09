@@ -75,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        menu.add("List View").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(MainActivity.this , ListViewActivity.class));
+                return false;
+            }
+        });
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -113,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView txv1 = findViewById(R.id.distance_txv);
 //                txv1.setText("Distance : "+ car.getDistance());
                 TextView txv2 = findViewById(R.id.gas_txv);
-//                txv2.setText("Gas : " + car.getGas());
+//                 txv2.setText("Gas : " + car.getGas());
             }
         } , 0 , 1000);}catch (Exception e){
             e.printStackTrace();
