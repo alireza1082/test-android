@@ -9,10 +9,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/accessibility_action_clickable_span"
+        android:id="@+id/click"
         android:text="click"
         android:layout_centerHorizontal="true"
-        android:onClick="progress"
+        android:onClick="builder"
         android:layout_marginTop="20dp"
         />
 
@@ -20,10 +20,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="click2"
-        android:layout_below="@id/accessibility_action_clickable_span"
+        android:id="@+id/click2"
+        android:layout_below="@id/click"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:onClick="builder"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click3"
+        android:id="@+id/click3"
+        android:layout_below="@id/click2"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="builder"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click4"
+        android:layout_below="@id/click3"
+        android:id="@+id/click4"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="builder"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="click5"
+        android:layout_below="@id/click4"
+        android:id="@+id/click5"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="showDialog"
         />
 
 </RelativeLayout>
