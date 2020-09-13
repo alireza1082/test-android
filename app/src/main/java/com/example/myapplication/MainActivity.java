@@ -89,6 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+        menu.add("Radio Test").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                startActivity(new Intent(MainActivity.this , RadioButtonActivity.class));
+                return false;
+            }
+        });
         return super.onCreateOptionsMenu(menu);
     }
 
