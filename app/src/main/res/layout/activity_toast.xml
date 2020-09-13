@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ToastActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast"
+        android:id="@+id/toast_button"
+        tools:ignore="MissingConstraints"
+        android:onClick="toastButton"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
